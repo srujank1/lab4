@@ -5,10 +5,12 @@
 #include "common.h"
 #include <string>
 
+//What is the TreeNode storing?
 struct TreeNode
 {
+    //need a value thing for the identifier
+    //Token *TNode;
     string id();
-    //need a value thing
     TreeNode *left;
     TreeNode *right;
 };
@@ -22,8 +24,9 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
         bool isEmpty();
-        TreeNode *SearchTree(Token *node);
+        //TreeNode *SearchTree(Token *node);    //imlement later
         int Insert(TreeNode *newNode);
+        int Insert(string sentID);
     private:
         void Clear(TreeNode *node);
 };
