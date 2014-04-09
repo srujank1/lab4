@@ -8,6 +8,9 @@ class LineList{
         int lineNum;
         LineList *next;
     public:
+        
+        LineList();
+        ~LineList();
         int getlineNum();
         LineList* getLineList();
         void setLineNum(int x);
