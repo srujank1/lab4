@@ -12,6 +12,7 @@ class LineList{
         LineList* getLineList();
         void setLineNum(int x);
         void setLineList(LineList *LL);
+        void Clear(LineList *node);
 
 };
 
