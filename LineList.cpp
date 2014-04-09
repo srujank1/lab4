@@ -1,5 +1,5 @@
 #include "LineList.h"
-
+#include <cstddef>
 
 LineList::LineList()
 {
@@ -31,5 +31,16 @@ void LineList::setLineNum(int x)
 void LineList::setLineList(LineList *LL)
 {
      next = LL;
+}
+void LineList::Clear(LineList *node)
+{
+     LineList *NEXT;
+     while (node != NULL)
+    {
+        NEXT = node;
+        node = node->next;
+        delete(NEXT);
+
+    }
 }
 
