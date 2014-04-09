@@ -4,7 +4,7 @@
 LineList::LineList()
 {
     next =NULL;
-    lineNum =NULL:
+    lineNum =0;
 }
 
 LineList::~LineList()
