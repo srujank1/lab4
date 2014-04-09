@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "common.h"
+#include "LineList.h"
 
 using namespace std;
 
@@ -31,7 +32,9 @@ private:
     literal;
     string tokenString;
     //What variables and methods am I missing to implement a binary tree.
-    
+    LineList *head;
+    Token *left;
+    Token *right;
 public:
     Token();
     ~Token();
@@ -49,6 +52,10 @@ public:
     string getTokenString();
     void setNextToken(Token *newToken);
     Token* getNextToken();
+    Token* getLeft();
+    Token* getRight();
+    void setLeft(Token *node);
+    void setRight(Token *node);
 };
 
 #endif /* defined(__Lab4__Token__) */

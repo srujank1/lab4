@@ -1,4 +1,5 @@
 #include "BinaryTree.h"
+#include "Token.h"
 
 BinaryTree::BinaryTree()
 {
@@ -10,11 +11,11 @@ BinaryTree::~BinaryTree()
     Clear(root);
 }
 
-void BinaryTree::Clear(TreeNode *node)
+void BinaryTree::Clear(Token *node)
 {
     if(node==NULL) return;  // Nothing to clear
-    if(node->left != NULL) Clear(node->left); // Clear left sub-tree
-    if(node->right != NULL) Clear(node->right); // Clear right sub-tree
+    if(node->getLeft() != NULL) Clear(node->getLeft()); // Clear left sub-tree
+    if(node->getRight() != NULL) Clear(node->getRight()); // Clear right sub-tree
     delete node;    // Destroy this node
     return;
 }
@@ -24,45 +25,24 @@ bool BinaryTree::isEmpty()
     return(root==NULL);
 }
 
-/*
-int BinaryTree::Insert(TreeNode *newNode)
+int BinaryTree::Insert(Token *newTok)
 {
-    TreeNode *temp;
-    TreeNode *back;
+    if(root==NULL){
+        root=newTok;
+    }else{
+        Token *current=root;
+        while(current=NULL){
+            if(newTok->getTokenString().compare(current->getTokenString())){
+                if(current->getLeft() != NULL){
+                    current->setLeft(current);
+                }
+            }else{
+                current->setLeft(newTok);
+                current=NULL;
+            }
 
-    temp = root;
-    back = NULL;
-
-    while(temp != NULL) // Loop till temp falls out of the tree
-    {
-        back = temp;
-        if((newNode->TNode->literal).compare(temp->TNode->literal)<0)
-            temp = temp->left;
-        else
-            temp = temp->right;
+        }
     }
-
-    if(back == NULL) // Attach as root node in a new tree
-        root = newNode;
-    else
-    {
-        if((newNode->TNode->literal).compare(back->TNode->literal)<0)
-            back->left = newNode;
-        else
-            back->right = newNode;
-    }
-   return(true);
 }
-*/
-int BinaryTree::Insert(string sentID)
-{
-    TreeNode *newNode;
 
-    // Create the new node and copy data into it
-    newNode = new TreeNode();
-    strcpy(newNode->id.c_str(), sentID.c_str());
-    newNode->left = newNode->right = NULL;
 
-    // Call other Insert() to do the actual insertion
-    return(Insert(newNode));
-}

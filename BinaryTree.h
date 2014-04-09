@@ -6,29 +6,21 @@
 #include <string>
 
 //What is the TreeNode storing?
-struct TreeNode
-{
-    //need a value thing for the identifier
-    //Token *TNode;
-    string id();
-    TreeNode *left;
-    TreeNode *right;
-};
+
 
 class BinaryTree
 {
     private:
-        TreeNode *root;
+        Token *root;
 
     public:
         BinaryTree();
         ~BinaryTree();
         bool isEmpty();
         //TreeNode *SearchTree(Token *node);    //imlement later
-        int Insert(TreeNode *newNode);
-        int Insert(string sentID);
+        int Insert(Token *newTok);
     private:
-        void Clear(TreeNode *node);
+        void Clear(Token *node);
 };
 
 #endif // BINARYTREE_H
