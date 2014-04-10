@@ -33,9 +33,9 @@ private:
     char todays_date[DATE_STRING_LENGTH];
     CharCode char_table[CHAR_TABLE_SIZE];  // The character table
     char source_line[MAX_SOURCE_LINE_LENGTH];
-    char *line_ptr = NULL;
+    char *line_ptr;
     int line_number;
-    
+
     bool getSourceLine(char source_buffer[]);
     char getChar(char source_buffer[]);
     void skipBlanks(char source_buffer[]);
@@ -46,7 +46,7 @@ private:
     void getSpecial(char *str, char *token_ptr, Token *tok);
     void downshiftWord(char word[]);
     bool isReservedWord(char *str, Token *tok);
-    
+
 public:
     Scanner(FILE *source_file, char source_name[], char date[], Print printer);
     ~Scanner();

@@ -11,15 +11,14 @@ Token::Token()
 {
     //What code do I need here to initialize everything.
 
-    tree=new BinaryTree();
     head=new LineList();
     left=new Token();
     right=new Token();
 }
-Token::~Token(Token *root)
+Token::~Token(Token *tok)
 {
     //What code do I need here to free memory
-    tree.Clear(root);
+    delete tok;
 }
 void Token::setCode(TokenCode newCode)
 {
