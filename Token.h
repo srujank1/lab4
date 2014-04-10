@@ -33,6 +33,7 @@ private:
     string tokenString;
     //What variables and methods am I missing to implement a binary tree.
     LineList *head;
+    Token *root;
     Token *left;
     Token *right;
 public:
@@ -56,6 +57,7 @@ public:
     Token* getRight();
     void setLeft(Token *node);
     void setRight(Token *node);
+    void deleteToken(Token *node);
 };
 
 #endif /* defined(__Lab4__Token__) */

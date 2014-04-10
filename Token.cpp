@@ -12,13 +12,14 @@ Token::Token()
     //What code do I need here to initialize everything.
 
     head=new LineList();
+    root=new Token();
     left=new Token();
     right=new Token();
 }
-Token::~Token(Token *tok)
+Token::~Token()
 {
     //What code do I need here to free memory
-    delete tok;
+    deleteToken(root);
 }
 void Token::setCode(TokenCode newCode)
 {
@@ -83,4 +84,8 @@ void Token::setLeft(Token * node){
 
 void Token::setRight(Token * node){
     this->right=node;
+}
+
+void deleteToken(Token *node){
+    delete node;
 }
