@@ -5,7 +5,6 @@
 #include "common.h"
 #include <string>
 
-//What is the TreeNode storing?
 
 
 class BinaryTree
@@ -17,8 +16,10 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
         bool isEmpty();
-        //TreeNode *SearchTree(Token *node);    //imlement later
         int Insert(Token *newTok);
+        void PrintOne(Token *T);
+        void PrintAll(Token *T);
+        void PrintTree();
     private:
         void Clear(Token *node);
 };

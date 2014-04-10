@@ -45,4 +45,24 @@ int BinaryTree::Insert(Token *newTok)
     }
 }
 
+void BinaryTree::PrintOne(Token *T)
+{
+    cout << T->getTokenString()<< "\t\t" << "\n";
+}
+
+void BinaryTree::PrintAll(Token *T)
+{
+    if(T != NULL)
+    {
+        PrintAll(T->getLeft());
+        PrintOne(T);
+        PrintAll(T->getRight());
+    }
+}
+
+void BinaryTree::PrintTree()
+{
+    PrintAll(root);
+}
+
 
