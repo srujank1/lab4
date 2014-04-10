@@ -8,6 +8,8 @@
 #include "Scanner.h"
 #include "Print.h"
 #include "Token.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct
 {
