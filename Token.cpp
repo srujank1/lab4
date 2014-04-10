@@ -6,6 +6,7 @@
 //
 
 #include "Token.h"
+#include <stdlib.h>
 
 Token::Token()
 {
@@ -86,6 +87,6 @@ void Token::setRight(Token * node){
     this->right=node;
 }
 
-void deleteToken(Token *node){
+void Token::deleteToken(Token *node){
     delete node;
 }
